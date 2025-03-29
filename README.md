@@ -49,7 +49,7 @@ After=network.target
 [Service]
 User=koha
 WorkingDirectory=/home/koha/ktuwa
-ExecStart=/home/koha/ktuwa/myenv/bin/python app/app.py
+ExecStart=/home/koha/ktuwa/app/myenv/bin/python app/app.py
 Restart=always
 
 [Install]
