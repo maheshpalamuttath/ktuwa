@@ -19,9 +19,9 @@ DB_CONFIG = {
 
 def get_top_users():
     query = """
-    SELECT b.borrowernumber, b.cardnumber, 
-           CONCAT(b.title, ' ', b.surname) AS name, 
-           COALESCE(COUNT(i.issue_id), 0) AS borrow_count, 
+    SELECT b.borrowernumber, b.cardnumber,
+           CONCAT(b.title, ' ', b.surname) AS name,
+           COALESCE(COUNT(i.issue_id), 0) AS borrow_count,
            br.branchname
     FROM borrowers b
     LEFT JOIN issues i ON b.borrowernumber = i.borrowernumber
@@ -31,7 +31,7 @@ def get_top_users():
     ORDER BY borrow_count DESC
     LIMIT 5;
     """
-    
+
     with mysql.connector.connect(**DB_CONFIG) as conn:
         with conn.cursor() as cursor:
             cursor.execute(query)
@@ -49,7 +49,7 @@ def image(borrowernumber):
         with conn.cursor() as cursor:
             cursor.execute(query, (borrowernumber,))
             result = cursor.fetchone()
-    
+
     if result and result[0]:
         return send_file(io.BytesIO(result[0]), mimetype='image/jpeg')
     else:
