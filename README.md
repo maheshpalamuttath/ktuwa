@@ -49,8 +49,8 @@ After=network.target
 
 [Service]
 User=koha
-WorkingDirectory=/home/koha/koha_top_users
-ExecStart=/home/koha/koha_top_users/myenv/bin/python app/app.py
+WorkingDirectory=/home/koha/ktuwa
+ExecStart=/home/koha/ktuwa/myenv/bin/python app/app.py
 Restart=always
 
 [Install]
