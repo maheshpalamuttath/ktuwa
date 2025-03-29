@@ -23,8 +23,7 @@ nano .env  # Change Koha database credentials and save
 
 ```sh
 cd app
-chmod +x run.sh
-./run.sh
+python app.py
 ```
 
 Access the application via:
