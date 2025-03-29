@@ -74,6 +74,3 @@ Click the code icon and paste the following:
 ```html
 <iframe src="http://your-server-ip:5000/" width="100%" height="650px" style="border: none;"></iframe>
 ```
-
-This will embed the Flask app into Koha OPAC.
-
